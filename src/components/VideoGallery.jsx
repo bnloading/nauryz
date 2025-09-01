@@ -60,6 +60,7 @@ const VideoGallery = () => {
     "/images/Berik/6.jpg",
     "/images/Berik/7.jpg",
     "/images/Berik/8.jpg",
+    "/images/Berik/9.jpg",
   ];
 
   // Auto slide functionality
