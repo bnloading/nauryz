@@ -319,7 +319,7 @@ export default function Hero() {
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.6 }}
-                        className="text-3xl sm:text-3xl font-Toy text-black leading-relaxed tracking-wide font-bold"
+                        className="text-2xl sm:text-3xl font-Toy text-black leading-relaxed tracking-wide font-bold"
                       >
                         {config.data.groomName}
                         <span className="inline-block mx-4">

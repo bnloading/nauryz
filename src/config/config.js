@@ -13,7 +13,7 @@ const config = {
     address: "Баян-Өлгий аймағы, Баяннуур сум",
     maps_url: "https://maps.app.goo.gl/6aJVm877HUpRTv5o9",
     maps_embed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6609.1234567890123!2d89.480!3d48.300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zNDjCsDE4JzEyLjAiTiA4OcKwMTfnmDUuMCJF!5e0!3m2!1skk!2skz!4v1693564800000!5m2!1skk!2skz",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11727.123456!2d91.1606763!3d48.9446931!2m3!1f0!2f0!3f0!3m2!1skk!2skz!4f13.1!3m3!1m2!1s0x0000000000000000:0x123456789abc!2sTsul-Ulaan!5e0!3m2!1skk!2skz!4v1696200000000!5m2!1skk!2skz",
 
     favicon: "/images/favicon.ico",
     agenda: [
