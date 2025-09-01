@@ -67,9 +67,9 @@
 .bg-gradient-overlay {
   background: linear-gradient(
     45deg,
-    rgba(251, 207, 232, 0.1),
-    rgba(244, 114, 182, 0.05),
-    rgba(251, 207, 232, 0.1)
+    #ef050cd8,
+    hsla(0, 94%, 45%, 0.963),
+    hsla(0, 94%, 49%, 0.962)
   );
   background-size: 200% 200%;
   animation: gradient 15s ease infinite;
@@ -113,12 +113,7 @@
 }
 
 .shine {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, #ef1111ea, transparent);
   background-size: 200% 100%;
   animation: shine 4s infinite;
 }

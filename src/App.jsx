@@ -22,7 +22,7 @@ import MainContent from "@/pages/MainContent";
 import LandingPage from "@/pages/LandingPage";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import config from "@/config/config";
-import BackgroundSlider from "@/components/BackgroundSlider";
+
 import ImagePreloader from "@/components/ImagePreloader";
 
 // Optimized Background Component for App
@@ -152,7 +152,7 @@ function App() {
         <ImagePreloader images={galleryImages} priority={false} />
 
         {/* Optimized Background Image */}
-        <AppBackground imageSrc="/images/Saya/10.JPEG" />
+        <AppBackground imageSrc="/images/Berik/1.jpg" />
 
         <AnimatePresence mode="wait">
           {!isInvitationOpen ? (
