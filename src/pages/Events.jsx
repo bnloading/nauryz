@@ -6,12 +6,12 @@ import { useState } from "react";
 import SectionSeparator from "@/components/SectionSeparator";
 
 // Simple Custom Calendar Component
-const CustomCalendar = ({ markedDate = 28 }) => {
+const CustomCalendar = ({ markedDate = 8 }) => {
   const year = 2025;
-  const month = "шілде";
+  const month = "Қыркүйек";
   const daysOfWeek = ["Дүй", "Сей", "Сәр", "Бей", "Жұм", "Сен", "Жек"];
-  const daysInMonth = 31;
-  const firstDayOfWeek = 2; // July 1st, 2025 starts on Tuesday
+  const daysInMonth = 30;
+  const firstDayOfWeek = 0; // July 1st, 2025 starts on Tuesday
 
   const renderCalendarDays = () => {
     const days = [];
@@ -52,7 +52,7 @@ const CustomCalendar = ({ markedDate = 28 }) => {
 };
 
 export default function Events() {
-  const [date] = useState(new Date(2025, 7, 28)); // 27 шілде 2025 (month is 0-indexed)
+  const [date] = useState(new Date(2025, 9, 8)); // 8 қыркүйек 2025 (month is 0-indexed)
 
   return (
     <>
@@ -65,7 +65,7 @@ export default function Events() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 container mx-auto px-4 py-20"
+          className="relative z-10 container mx-auto px-4 py-10"
         >
           {/* Header */}
           <motion.div
@@ -86,25 +86,14 @@ export default function Events() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-2xl sm:text-3xl font-monserrat text-gray-600 mb-4"
+              className="text-2xl sm:text-3xl font-monserrat text-gray-600 mb-24"
             >
               <h1 className="font-Toy text-4xl text-gray-800">Той иелері:</h1>
               <p className="text-2xl font-monserrat text-gray-900">
                 <br />
-                <span className="italic font-semibold text-gray-800 text-lg">
-                  АТА-АНАСЫ:
-                </span>
-                <br />
+
                 <span className="font-cormorant text-2xl text-gray-700">
-                  АҒЖАН, ЖАЙНАГҮЛ
-                </span>
-                <br />
-                <span className="italic font-semibold text-gray-800 text-lg">
-                  АҒА-ЖЕҢГЕСІ:
-                </span>
-                <br />
-                <span className="font-cormorant text-2xl text-gray-700">
-                  МАҒЖАН, ӨМІРГҮЛ
+                  Сүлеймен,Айжан
                 </span>
               </p>
             </motion.div>
@@ -114,7 +103,7 @@ export default function Events() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-5xl font-cormorant font-semibold text-gray-900 leading-tight tracking-wide"
+              className="text-4xl md:text-5xl font-cormorant font-semibold text-gray-900 leading-tight tracking-wide mt-24"
             >
               Той салтанатының бағдарламасы
             </motion.h2>
@@ -139,7 +128,7 @@ export default function Events() {
               className="flex justify-center my-8"
             >
               <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-                <CustomCalendar markedDate={28} />
+                <CustomCalendar markedDate={8} />
               </div>
             </motion.div>
 

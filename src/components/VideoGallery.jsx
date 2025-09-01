@@ -52,19 +52,14 @@ const VideoGallery = () => {
   const [isPlaying, setIsPlaying] = useState(true);
 
   const images = [
-    "/images/Saya/1.JPEG",
-    "/images/Saya/2.JPEG",
-    "/images/Saya/3.JPEG",
-    "/images/Saya/4.JPEG",
-    "/images/Saya/5.JPEG",
-    "/images/Saya/6.JPEG",
-    "/images/Saya/7.JPEG",
-    "/images/Saya/8.JPEG",
-    "/images/Saya/9.JPEG",
-    "/images/Saya/10.JPEG",
-
-    "/images/Saya/12.jpg",
-    "/images/Saya/13.jpg",
+    "/images/Berik/1.jpg",
+    "/images/Berik/2.jpg",
+    "/images/Berik/3.jpg",
+    "/images/Berik/4.jpg",
+    "/images/Berik/5.jpg",
+    "/images/Berik/6.jpg",
+    "/images/Berik/7.jpg",
+    "/images/Berik/8.jpg",
   ];
 
   // Auto slide functionality

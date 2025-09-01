@@ -282,7 +282,7 @@ export default function Hero() {
               Біздің бақытты күнімізбен бөлісіңіз!
             </span>
           </motion.div>
-          <h1 className="font-custom text-3xl text-gray-900">
+          <h1 className="font-Toy text-3xl text-gray-900">
             Құрметті қонақтар!
           </h1>
 
@@ -319,7 +319,7 @@ export default function Hero() {
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.6 }}
-                        className="text-4xl sm:text-4xl font-Toy text-black leading-relaxed tracking-wide font-bold"
+                        className="text-3xl sm:text-3xl font-Toy text-black leading-relaxed tracking-wide font-bold"
                       >
                         {config.data.groomName}
                         <span className="inline-block mx-4">
