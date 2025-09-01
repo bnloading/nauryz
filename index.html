@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Basic Meta Tags -->
-    <title>🔔 Берік & Гүлжауһардың тойы 🔔</title>
+    <title>🔔 Берік & Гүлжауһардың тойы - Тойға шақыру 🔔</title>
     <meta
       name="description"
-      content="Берік & Гүлжауһардың той салтанаты. Сізді қуанышқа шақырамыз!"
+      content="Берік & Гүлжауһардың той салтанаты. Сізді қуанышқа шақырамыз! Біздің ерекше күнімізде бізбен бірге болыңыз."
+    />
+    <meta
+      name="keywords"
+      content="той, шақыру, Берік, Гүлжауһар, үйлену тойы, қазақ тойы"
     />
 
-    <!-- Open Graph for WhatsApp/Facebook -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Берік & Гүлжауһардың тойы" />
     <meta property="og:title" content="🔔 Берік & Гүлжауһардың тойы 🔔" />
     <meta
       property="og:description"
@@ -21,128 +26,118 @@
     <meta property="og:url" content="https://toygashahiru.vercel.app/" />
     <meta
       property="og:image"
-      content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&crop=center"
+      content="https://picsum.photos/1200/630?random=1"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://picsum.photos/1200/630?random=1"
     />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Той шақыруы" />
+    <meta property="og:image:alt" content="Берік & Гүлжауһардың той шақыруы" />
+    <meta property="og:locale" content="kk_KZ" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="🔔 Берік & Гүлжауһардың тойы 🔔" />
-    <meta
-      name="twitter:description"
-      content="Берік & Гүлжауһардың той салтанаты. Сізді қуанышқа шақырамыз!"
-    />
-    <meta
-      name="twitter:image"
-      content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&crop=center"
-    />
 
-    <!-- Fonts -->
+    <!-- WhatsApp specific requirements -->
+    <meta property="fb:app_id" content="YOUR_FACEBOOK_APP_ID" />
+
+    <!-- Additional meta for better indexing -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Берік & Гүлжауһар" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://toygashahiru.vercel.app/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Preload important fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Playfair Display", serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-      }
-
-      .container {
-        max-width: 600px;
-        padding: 40px;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-      }
-
-      .title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      }
-
-      .names {
-        font-size: 3rem;
-        font-weight: 600;
-        margin: 30px 0;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      }
-
-      .description {
-        font-size: 1.2rem;
-        margin: 20px 0;
-        line-height: 1.6;
-      }
-
-      .decoration {
-        font-size: 2rem;
-        margin: 20px 0;
-        opacity: 0.8;
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          margin: 20px;
-          padding: 30px 20px;
-        }
-
-        .title {
-          font-size: 2rem;
-        }
-
-        .names {
-          font-size: 2.2rem;
+    <!-- Structured Data for better SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Берік & Гүлжауһардың тойы",
+        "description": "Берік & Гүлжауһардың той салтанаты. Сізді қуанышқа шақырамыз!",
+        "image": "https://toygashahiru.vercel.app/images/Berik/5.jpg",
+        "url": "https://toygashahiru.vercel.app/",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "organizer": {
+          "@type": "Person",
+          "name": "Берік & Гүлжауһар"
         }
       }
-    </style>
+    </script>
   </head>
 
   <body>
-    <div class="container">
-      <div class="decoration">🔔 ✨ 🔔</div>
-      <h1 class="title">Тойға Шақыру</h1>
-      <h2 class="names">Берік & Гүлжауһар</h2>
-      <p class="description">
-        Біздің той салтанатымызға<br />
-        Сізді қуанышпен шақырамыз!<br /><br />
-        Бізбен бірге болып,<br />
-        ерекше күнімізді бөлісіңіз!
-      </p>
-      <div class="decoration">💍 🎉 💕</div>
+    <!-- Preloader for better UX -->
+    <div
+      id="preloader"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          font-size: 24px;
+          color: #d4a574;
+        "
+      >
+        Жүктелуде...
+      </div>
     </div>
 
-    <!-- React app will load here if needed -->
-    <div id="root" style="display: none"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="root"></div>
 
+    <!-- Remove preloader after page loads -->
     <script>
-      // Show loading message
-      console.log("Wedding invitation loaded successfully!");
-
-      // Simple analytics
-      if (navigator.share) {
-        console.log("Native sharing is supported");
-      }
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        if (preloader) {
+          preloader.style.display = "none";
+        }
+      });
     </script>
+
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
