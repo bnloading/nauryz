@@ -1,31 +1,68 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="kk" class="scroll-smooth">
   <head>
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="🔔 Тойға шақыру 🔔" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Basic Meta Tags -->
+    <title>🔔 Берік & Гүлжауһардың тойы - Тойға шақыру 🔔</title>
+    <meta
+      name="description"
+      content="Берік & Гүлжауһардың той салтанаты. Сізді қуанышқа шақырамыз! Біздің ерекше күнімізде бізбен бірге болыңыз."
+    />
+    <meta
+      name="keywords"
+      content="той, шақыру, Берік, Гүлжауһар, үйлену тойы, қазақ тойы"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Берік & Гүлжауһардың тойы" />
+    <meta
+      property="og:title"
+      content="🔔 Берік & Гүлжауһардың тойы - Тойға шақыру 🔔"
+    />
     <meta
       property="og:description"
-      content="Берік & Гүлжауһардың той салтанаты. Сізді қуанышқа шақырамыз!"
+      content="Берік & Гүлжауһардың той салтанаты. Сізді қуанышқа шақырамыз! Біздің ерекше күнімізде бізбен бірге болыңыз."
     />
+    <meta property="og:url" content="https://toygashahiru.vercel.app/" />
     <meta
       property="og:image"
       content="https://toygashahiru.vercel.app/images/Berik/5.jpg"
     />
-    <meta property="og:url" content="https://toygashahiru.vercel.app/" />
-    <meta property="og:type" content="website" />
+    <meta
+      property="og:image:secure_url"
+      content="https://toygashahiru.vercel.app/images/Berik/5.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Берік & Гүлжауһардың той шақыруы" />
+    <meta property="og:locale" content="kk_KZ" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="🔔 Тойға шақыру 🔔" />
-    <meta
-      name="twitter:description"
-      content="Берік & Гүлжауһардың той салтанаты. Сізді қуанышқа шақырамыз!"
-    />
-    <meta
-      name="twitter:image"
-      content="https://toygashahiru.vercel.app/images/Berik/3.jpg"
-    />
 
+    <!-- WhatsApp specific (uses Open Graph) -->
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <!-- Telegram specific -->
+    <meta name="telegram:channel" content="@toygashahiru" />
+
+    <!-- Additional meta for better indexing -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Берік & Гүлжауһар" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://toygashahiru.vercel.app/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Preload important fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -46,11 +83,66 @@
       href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Тойға Шақыру</title>
+
+    <!-- Structured Data for better SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Берік & Гүлжауһардың тойы",
+        "description": "Берік & Гүлжауһардың той салтанаты. Сізді қуанышқа шақырамыз!",
+        "image": "https://toygashahiru.vercel.app/images/Berik/5.jpg",
+        "url": "https://toygashahiru.vercel.app/",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "organizer": {
+          "@type": "Person",
+          "name": "Берік & Гүлжауһар"
+        }
+      }
+    </script>
   </head>
 
   <body>
+    <!-- Preloader for better UX -->
+    <div
+      id="preloader"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          font-size: 24px;
+          color: #d4a574;
+        "
+      >
+        Жүктелуде...
+      </div>
+    </div>
+
     <div id="root"></div>
+
+    <!-- Remove preloader after page loads -->
+    <script>
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        if (preloader) {
+          preloader.style.display = "none";
+        }
+      });
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
