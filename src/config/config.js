@@ -3,27 +3,28 @@ const config = {
     title: "Берік & Гүлжауһар той салтанаты",
     description:
       "Біз үйленеміз және сізді осы қуанышты сәтті бізбен бірге тойлауға шақырамыз.",
-    groomName: "Берік",
-    brideName: "Гүлжауһар",
-    parentGroom: "Әкесі Ағжан",
-    parentBride: "Анасы Жайнагүл",
-    date: "2025-09-08",
-    time: "12:00",
-    location: "Ақ-Тілек тойханасы",
-    address: "Баян-Өлгий аймағы, Баяннуур сум",
-    maps_url: "https://maps.app.goo.gl/6aJVm877HUpRTv5o9",
+    groomName: "Ғасыртілек",
+    brideName: "Гүлнур",
+    // Updated from invitation image: date, time, location and address
+    parentGroom: "Амантай",
+    parentBride: "БұлбҰл",
+    date: "2025-11-22",
+    time: "17:00",
+    location: "ДАЯН РЕСОРТ 1",
+    address: "ДАЯН РЕСОРТ 1 тойханасы",
+    maps_url: "https://maps.app.goo.gl/WGGsiK1LYiq2mKmm9",
     maps_embed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11727.123456!2d91.1606763!3d48.9446931!2m3!1f0!2f0!3f0!3m2!1skk!2skz!4f13.1!3m3!1m2!1s0x0000000000000000:0x123456789abc!2sTsul-Ulaan!5e0!3m2!1skk!2skz!4v1696200000000!5m2!1skk!2skz",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16735.46807732401!2d89.92042664755475!3d48.97042507250205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42b4b5eb77745de1%3A0x574a3346cb5b24fc!2z0JTQkNCv0J0!5e1!3m2!1sen!2sus!4v1762846697858!5m2!1sen!2sus",
 
     favicon: "/images/favicon.ico",
     agenda: [
       {
         title: "Той",
-        date: "2025-09-08",
-        startTime: "12:00",
-        endTime: "00:00",
-        location: "Ақ-Тілек тойханасы",
-        address: "Баян-Өлгий аймағы, Баяннуур сум",
+        date: "2025-11-22",
+        startTime: "17:00",
+        endTime: "23:00",
+        location: "ДАЯН РЕСОРТ 1",
+        address: "ДАЯН РЕСОРТ 1 тойханасы",
       },
     ],
     audio: {
@@ -32,11 +33,15 @@ const config = {
       autoplay: true,
       loop: true,
     },
+    // Invitation / share images. Add an `invitation` image path which can be used
+    // to display a clickable invitation image. Place the actual file at the path
+    // used here (e.g. `images/invitation.jpg`) or change the path as needed.
     shareImages: {
-      ogImage: "/images/Berik/4.jpg",
-      thumbnail: "/images/Berik/4.jpg",
-      couplePhoto: "/images/Berik/4.jpg",
-      banner: "/images/Berik/4.jpg",
+      ogImage: "/images/Gasyr/4.jpeg",
+      thumbnail: "/images/Gasyr/4.jpeg",
+      couplePhoto: "/images/Gasyr/4.jpeg",
+      banner: "/images/Gasyr/4.jpeg",
+      invitation: "/images/Gasyr/4.jpeg",
     },
   },
 };

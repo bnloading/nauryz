@@ -62,7 +62,7 @@ export default function Gallery() {
   const images = [
     {
       id: 1,
-      src: "/images/Berik/1.jpg",
+      src: "/images/Gasyr/1.jpeg",
       alt: "Сурет-1",
       description: "Сурет-1",
       style: { objectFit: "cover", aspectRatio: "16/9" },

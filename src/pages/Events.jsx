@@ -6,12 +6,12 @@ import { useState } from "react";
 import SectionSeparator from "@/components/SectionSeparator";
 
 // Simple Custom Calendar Component
-const CustomCalendar = ({ markedDate = 8 }) => {
+const CustomCalendar = ({ markedDate = 22 }) => {
   const year = 2025;
   const month = "Қыркүйек";
   const daysOfWeek = ["Дүй", "Сей", "Сәр", "Бей", "Жұм", "Сен", "Жек"];
   const daysInMonth = 30;
-  const firstDayOfWeek = 0; // July 1st, 2025 starts on Tuesday
+  const firstDayOfWeek = 5; // July 1st, 2025 starts on Tuesday
 
   const renderCalendarDays = () => {
     const days = [];
@@ -52,7 +52,7 @@ const CustomCalendar = ({ markedDate = 8 }) => {
 };
 
 export default function Events() {
-  const [date] = useState(new Date(2025, 9, 8)); // 8 қыркүйек 2025 (month is 0-indexed)
+  const [date] = useState(new Date(2025, 11, 22)); // 22 қараша 2025 (month is 0-indexed)
 
   return (
     <>
@@ -93,7 +93,7 @@ export default function Events() {
                 <br />
 
                 <span className="font-cormorant text-2xl text-gray-700">
-                  Сүлеймен,Айжан
+                  Амантай , Бұлбұл
                 </span>
               </p>
             </motion.div>
@@ -128,7 +128,7 @@ export default function Events() {
               className="flex justify-center my-8"
             >
               <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-                <CustomCalendar markedDate={8} />
+                <CustomCalendar markedDate={22} />
               </div>
             </motion.div>
 

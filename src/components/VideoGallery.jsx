@@ -34,12 +34,16 @@ const OptimizedSlideImage = ({ src, isActive }) => {
         </div>
       )}
 
-      {/* Optimized background image */}
+      {/* Use an <img> so browser handles orientation & aspect ratio correctly.
+          object-contain preserves the full image (no horizontal cropping).
+          If you prefer full-bleed cropping, change to object-cover. */}
       {loaded && (
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-300"
+        <img
+          src={src}
+          alt="gallery"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
           style={{
-            backgroundImage: `url(${src})`,
+            objectPosition: "center",
           }}
         />
       )}
@@ -52,15 +56,15 @@ const VideoGallery = () => {
   const [isPlaying, setIsPlaying] = useState(true);
 
   const images = [
-    "/images/Berik/1.jpg",
-    "/images/Berik/2.jpg",
-    "/images/Berik/3.jpg",
-    "/images/Berik/4.jpg",
-    "/images/Berik/5.jpg",
-    "/images/Berik/6.jpg",
-    "/images/Berik/7.jpg",
-    "/images/Berik/8.jpg",
-    "/images/Berik/9.jpg",
+    "/images/Gasyr/1.jpeg",
+    "/images/Gasyr/2.jpeg",
+    "/images/Gasyr/3.jpeg",
+    "/images/Gasyr/4.jpeg",
+    "/images/Gasyr/8.jpeg",
+    "/images/Gasyr/6.jpeg",
+    "/images/Gasyr/7.jpeg",
+    "/images/Gasyr/8.jpeg",
+    "/images/Gasyr/9.jpeg",
   ];
 
   // Auto slide functionality

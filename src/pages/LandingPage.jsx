@@ -142,11 +142,11 @@ const LandingPage = ({ onOpenInvitation }) => {
           {/* Top Image with Gradient - Increased height and adjusted gradient */}
           <div className="relative w-full h-64 sm:h-72 mb-6 rounded-3xl overflow-hidden">
             <img
-              src="/images/Berik/7.jpg"
+              src="/images/Gasyr/3.jpeg"
               alt="Wedding"
               className="absolute inset-0 w-full h-[100%] object-cover scale-105"
               style={{
-                objectPosition: "center 60%",
+                objectPosition: "center 25%",
               }}
               loading="eager"
             />
