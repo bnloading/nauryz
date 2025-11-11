@@ -78,7 +78,7 @@ function App() {
 
   // Priority images for fast loading
   const priorityImages = [
-    "/images/Saya/10.JPEG", // Main background
+    "/images/Gasyr/1.jpeg", // Main background
     "/images/Saya/1.JPEG", // Hero couple photo
     "/images/Saya/2.JPEG", // Landing page
   ];
@@ -152,7 +152,7 @@ function App() {
         <ImagePreloader images={galleryImages} priority={false} />
 
         {/* Optimized Background Image */}
-        <AppBackground imageSrc="/images/Berik/1.jpg" />
+        <AppBackground imageSrc="/images/Gasyr/4.jpg" />
 
         <AnimatePresence mode="wait">
           {!isInvitationOpen ? (
