@@ -35,13 +35,13 @@ const OptimizedSlideImage = ({ src, isActive }) => {
       )}
 
       {/* Use an <img> so browser handles orientation & aspect ratio correctly.
-          object-contain preserves the full image (no horizontal cropping).
+          object-contain preserves the full image (no cropping).
           If you prefer full-bleed cropping, change to object-cover. */}
       {loaded && (
         <img
           src={src}
           alt="gallery"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+          className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
           style={{
             objectPosition: "center",
           }}
@@ -60,7 +60,7 @@ const VideoGallery = () => {
     "/images/Gasyr/2.jpeg",
     "/images/Gasyr/3.jpeg",
     "/images/Gasyr/4.jpeg",
-    "/images/Gasyr/8.jpeg",
+    "/images/Gasyr/5.jpeg",
     "/images/Gasyr/6.jpeg",
     "/images/Gasyr/7.jpeg",
     "/images/Gasyr/8.jpeg",
@@ -73,7 +73,7 @@ const VideoGallery = () => {
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    }, 4000);
+    }, 10000);
 
     return () => clearInterval(timer);
   }, [isPlaying, images.length]);
