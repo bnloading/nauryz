@@ -1,4 +1,4 @@
-import config from "@/config/config";
+import config from "@/config/config.mjs";
 import {
   Clock,
   Navigation as NavigationIcon,

@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Calendar, Clock, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import config from "@/config/config";
+import config from "@/config/config.mjs";
 import { formatEventDate } from "@/lib/formatEventDate";
 import { safeBase64 } from "@/lib/base64";
 import SectionSeparator from "@/components/SectionSeparator";

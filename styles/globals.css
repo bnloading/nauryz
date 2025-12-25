@@ -68,7 +68,7 @@
   background: linear-gradient(
     45deg,
     #ef050cd8,
-    hsla(0, 94%, 45%, 0.963),
+    hwb(0 7% 20% / 0.818),
     hsla(0, 94%, 49%, 0.962)
   );
   background-size: 200% 200%;

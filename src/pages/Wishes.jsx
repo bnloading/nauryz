@@ -177,6 +177,7 @@ export default function Wishes() {
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
+             
             </div>
           </div>
         )}
