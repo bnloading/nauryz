@@ -33,45 +33,49 @@ const ImageLoader = ({ src, alt, className, style, onClick }) => {
       )}
 
       {/* Optimized image */}
-      {loaded && (
-        <img
-          src={src}
-          alt={alt}
-          className={`${className} transition-all duration-300`}
-          style={style}
-          onClick={onClick}
-          loading="eager"
-          decoding="async"
-        />
-      )}
-
-      {error && (
-        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center text-gray-500">
-          <span className="text-xs">Сурет жүктелмеді</span>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default function Gallery() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const images = [
-    {
-      id: 1,
-      src: "/images/Jakha/1.jfif",
-      alt: "Сурет-1",
-      description: "Сурет-1",
-      style: { objectFit: "cover", aspectRatio: "16/9" },
-    },
-    {
-      id: 2,
-      src: "/images/Berik/1.jpg",
-      alt: "Сурет-2",
-      description: "Сурет-2",
+      const images = [
+        {
+          id: 1,
+          src: "/images/Aibek/Aibek1.jfif",
+          alt: "Gallery Photo",
+          description: "Gallery Photo",
+          style: { objectFit: "cover", aspectRatio: "16/9" },
+        },
+        {
+          id: 2,
+          src: "/images/Aibek/Aibek1.jfif",
+          alt: "Gallery Photo",
+          description: "Gallery Photo",
+          style: { objectFit: "cover", aspectRatio: "16/9" },
+        },
+        {
+          id: 3,
+          src: "/images/Aibek/Aibek1.jfif",
+          alt: "Gallery Photo",
+          description: "Gallery Photo",
+          style: { objectFit: "cover", aspectRatio: "16/9" },
+        },
+        {
+          id: 4,
+          src: "/images/Aibek/Aibek1.jfif",
+          alt: "Gallery Photo",
+          description: "Gallery Photo",
+          style: { objectFit: "cover", aspectRatio: "16/9" },
+        },
+        {
+          id: 5,
+          src: "/images/Aibek/Aibek1.jfif",
+          alt: "Gallery Photo",
+          description: "Gallery Photo",
+          style: { objectFit: "cover", aspectRatio: "16/9" },
+        },
+        {
+          id: 6,
+          src: "/images/Aibek/Aibek1.jfif",
+          alt: "Gallery Photo",
+          description: "Gallery Photo",
+          style: { objectFit: "cover", aspectRatio: "16/9" },
+        },
       style: { objectFit: "cover", aspectRatio: "16/9" },
     },
     {

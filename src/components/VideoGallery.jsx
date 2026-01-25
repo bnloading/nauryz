@@ -55,12 +55,7 @@ const VideoGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  const images = [
-    "/images/Jakha/1.jfif",
-    "/images/Jakha/2.jfif",
-    "/images/Jakha/3.jfif",
-    "/images/Jakha/4.jfif",
-  ];
+  const images = ["/images/Aibek/image.png", "/images/Aibek/Aibek1.jfif"];
 
   // Auto slide functionality
   useEffect(() => {

@@ -245,7 +245,7 @@ export default function Hero() {
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-500/20 group-hover:opacity-75 transition-opacity  " />
               <FastImage
-                src={config.data.shareImages.couplePhoto}
+                src="/images/Aibek/Aibek1.jfif"
                 alt={`${config.data.groomName} & ${config.data.brideName}`}
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
                 onClick={() => setIsImageModalOpen(true)}
@@ -354,7 +354,7 @@ export default function Hero() {
             <ImageModal
               isOpen={isImageModalOpen}
               onClose={() => setIsImageModalOpen(false)}
-              imageSrc={config.data.shareImages.couplePhoto}
+              imageSrc="/images/Aibek/Aibek1.jfif"
             />
           )}
         </AnimatePresence>

@@ -2,8 +2,8 @@ const config = {
   data: {
     title: "С.Серікбол & А.Балжан тойы",
     description: "С.Серікбол мен А.Балжан — сізді тойға шақырады.",
-    groomName: "С.Серікбол",
-    brideName: "А.Балжан",
+    groomName: "С.Айбек",
+    brideName: "М.Ахсунхар",
     // Invitation info updated per request
     parentGroom: "Әке, Шешесі: (Салдатхан)",
     parentBride: "Сәулеш Аға-жеңгелері",
@@ -29,13 +29,13 @@ const config = {
       autoplay: true,
       loop: true,
     },
-    // Use images from the `Jakha` folder in public/images
+    // Use images from the `Aibek` folder in public/images
     shareImages: {
-      ogImage: "/images/Jakha/1.jfif",
-      thumbnail: "/images/Jakha/2.jfif",
-      couplePhoto: "/images/Jakha/3.jfif",
-      banner: "/images/Jakha/3.jfif",
-      invitation: "/images/Jakha/4.jfif",
+      ogImage: "/images/Aibek/Aibek1.jfif",
+      thumbnail: "/images/Aibek/Aibek1.jfif",
+      couplePhoto: "/images/Aibek/Aibek1.jfif",
+      banner: "/images/Aibek/Aibek1.jfif",
+      invitation: "/images/Aibek/Aibek1.jfif",
     },
   },
 };

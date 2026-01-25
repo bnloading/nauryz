@@ -71,6 +71,7 @@ const LandingPage = ({ onOpenInvitation }) => {
         <div
           className="absolute inset-0  bg-cover bg-center bg-no-repeat"
           style={{
+            backgroundImage: 'url("/images/Aibek/Aibek1.jfif")',
             backgroundPosition: "center 25%",
           }}
         />
@@ -142,7 +143,7 @@ const LandingPage = ({ onOpenInvitation }) => {
           {/* Top Image with Gradient - Increased height and adjusted gradient */}
           <div className="relative w-full h-64 sm:h-72 mb-6 rounded-3xl overflow-hidden">
             <img
-              src="/images/Jakha/3.jfif"
+              src="/images/Aibek/image.png"
               alt="Wedding"
               className="absolute inset-0 w-full h-[100%] object-cover scale-105"
               style={{
