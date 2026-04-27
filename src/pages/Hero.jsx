@@ -245,7 +245,7 @@ export default function Hero() {
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-500/20 group-hover:opacity-75 transition-opacity  " />
               <FastImage
-                src="/images/Aibek/Aibek1.jfif"
+                src={config.data.media.heroMainPhoto}
                 alt={`${config.data.groomName} & ${config.data.brideName}`}
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
                 onClick={() => setIsImageModalOpen(true)}
@@ -255,7 +255,7 @@ export default function Hero() {
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
                   <span className="text-gray-600 text-sm font-medium">
-                    Үлкейту
+                    {config.data.texts.zoomHint}
                   </span>
                 </div>
               </div>
@@ -279,11 +279,11 @@ export default function Hero() {
           >
             <span className="absolute inset-0 bg-gray-200 blur-md opacity-50" />
             <span className="relative px-6 py-2 text-sm bg-gray-50 text-gray-600 rounded-full border border-gray-200 shadow-sm">
-              Біздің бақытты күнімізбен бөлісіңіз!
+              {config.data.texts.heroBanner}
             </span>
           </motion.div>
           <h1 className="font-Toy text-3xl text-gray-900">
-            Құрметті қонақтар!
+            {config.data.texts.heroGreeting}
           </h1>
 
           {/* Names and Message section with updated font */}
@@ -313,7 +313,7 @@ export default function Hero() {
                   className="space-y-1 py-1"
                 >
                   <p className="text-gray-800 font-montserrat  text-lg">
-                    Cіздерді балаларымыз
+                    {config.data.texts.heroInvitePrefix}
                     <div className="space-y-4">
                       <motion.h2
                         initial={{ scale: 0.8, opacity: 0 }}
@@ -331,8 +331,7 @@ export default function Hero() {
                         {config.data.brideName}
                       </motion.h2>
                     </div>
-                    Үйлену тойына арналған салтанатты дастарханымыздың қадірлі
-                    қонағы болуға шақырамыз!
+                    {config.data.texts.heroInviteSuffix}
                   </p>
                   <p className="text-2xl text-gray-700 font-cormorant font-semibold">
                     {guestName ? guestName : ""}
@@ -354,7 +353,7 @@ export default function Hero() {
             <ImageModal
               isOpen={isImageModalOpen}
               onClose={() => setIsImageModalOpen(false)}
-              imageSrc="/images/Aibek/Aibek1.jfif"
+              imageSrc={config.data.media.heroMainPhoto}
             />
           )}
         </AnimatePresence>

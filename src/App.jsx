@@ -75,27 +75,8 @@ const AppBackground = ({ imageSrc }) => {
  */
 function App() {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
-
-  // Priority images for fast loading
-  const priorityImages = [
-    "/images/Jakha/1.jfif", // Main background
-    "/images/Saya/1.JPEG", // Hero couple photo
-    "/images/Saya/2.JPEG", // Landing page
-  ];
-
-  // All gallery images for preloading
-  const galleryImages = [
-    "/images/Saya/3.JPEG",
-    "/images/Saya/4.JPEG",
-    "/images/Saya/5.JPEG",
-    "/images/Saya/6.JPEG",
-    "/images/Saya/7.JPEG",
-    "/images/Saya/8.JPEG",
-    "/images/Saya/9.JPEG",
-    "/images/Saya/11.jpg",
-    "/images/Saya/12.jpg",
-    "/images/Saya/13.jpg",
-  ];
+  const priorityImages = config.data.media.preloaderPriority;
+  const galleryImages = config.data.media.preloaderGallery;
 
   return (
     <HelmetProvider>
@@ -152,7 +133,7 @@ function App() {
         <ImagePreloader images={galleryImages} priority={false} />
 
         {/* Optimized Background Image */}
-        <AppBackground imageSrc="/images/Jakha/4.jfif" />
+        <AppBackground imageSrc={config.data.media.appBackground} />
 
         <AnimatePresence mode="wait">
           {!isInvitationOpen ? (

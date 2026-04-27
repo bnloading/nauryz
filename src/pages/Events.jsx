@@ -2,16 +2,14 @@ import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import EventCards from "@/components/EventsCard";
 import config from "@/config/config";
-import { useState } from "react";
 import SectionSeparator from "@/components/SectionSeparator";
 
 // Simple Custom Calendar Component
-const CustomCalendar = ({ markedDate = 4 }) => {
-  const year = 2026;
-  const month = "Қаңтар"; // January in Kazakh
-  const daysOfWeek = ["Дүй", "Сей", "Сәр", "Бей", "Жұм", "Сен", "Жек"];
+const CustomCalendar = () => {
+  const daysOfWeek = config.data.calendar.daysOfWeek;
   const daysInMonth = 30;
-  const firstDayOfWeek = 3; // January 1st, 2026 starts on Friday
+  const firstDayOfWeek = config.data.calendar.firstDayOffset;
+  const markedDate = config.data.calendar.markedDate;
 
   const renderCalendarDays = () => {
     const days = [];
@@ -27,7 +25,7 @@ const CustomCalendar = ({ markedDate = 4 }) => {
       days.push(
         <div key={day} className={`calendar-day ${isMarked ? "marked" : ""}`}>
           <span>{day}</span>
-        </div>
+        </div>,
       );
     }
 
@@ -52,8 +50,6 @@ const CustomCalendar = ({ markedDate = 4 }) => {
 };
 
 export default function Events() {
-  const [date] = useState(new Date(2026, 1, 4)); // 4 қаңтар 2026 (month is 0-indexed)
-
   return (
     <>
       <section
@@ -88,12 +84,14 @@ export default function Events() {
               transition={{ delay: 0.3 }}
               className="text-2xl sm:text-3xl font-monserrat text-gray-600 mb-24"
             >
-              <h1 className="font-Toy text-4xl text-gray-800">Той иелері:</h1>
+              <h1 className="font-Toy text-4xl text-gray-800">
+                {config.data.texts.eventOwnersTitle}
+              </h1>
               <p className="text-2xl font-monserrat text-gray-900">
                 <br />
 
                 <span className="font-cormorant text-2xl text-gray-700">
-                  Әке, Шешесі: (Салдатхан), Сәулеш <br /> Аға-жеңгелері
+                  {config.data.parentGroom}, {config.data.parentBride}
                 </span>
               </p>
             </motion.div>
@@ -105,7 +103,7 @@ export default function Events() {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl font-cormorant font-semibold text-gray-900 leading-tight tracking-wide mt-24"
             >
-              Той салтанатының бағдарламасы
+              {config.data.texts.eventProgramTitle}
             </motion.h2>
 
             <motion.p
@@ -115,8 +113,7 @@ export default function Events() {
               transition={{ delay: 0.4 }}
               className="text-gray-600 max-w-md mx-auto font-montserrat text-base leading-relaxed"
             >
-              Біз сіздерді махаббат жолымыздың басталуының куәгері болуға
-              шақырамыз
+              {config.data.texts.eventProgramSubtitle}
             </motion.p>
 
             {/* Custom Calendar */}
@@ -128,7 +125,7 @@ export default function Events() {
               className="flex justify-center my-8"
             >
               <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-                <CustomCalendar markedDate={4} />
+                <CustomCalendar />
               </div>
             </motion.div>
 
@@ -165,7 +162,7 @@ export default function Events() {
       <SectionSeparator variant="default" />
 
       {/* Custom Calendar Styles */}
-      <style jsx>{`
+      <style>{`
         .calendar-container {
           max-width: 320px;
           margin: 0 auto;

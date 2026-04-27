@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import SectionSeparator from "@/components/SectionSeparator";
+import config from "@/config/config";
 
 // Optimized Image Component for VideoGallery
 const OptimizedSlideImage = ({ src, isActive }) => {
@@ -55,7 +56,7 @@ const VideoGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  const images = ["/images/Aibek/image.png", "/images/Aibek/Aibek1.jfif"];
+  const images = config.data.media.videoSlides;
 
   // Auto slide functionality
   useEffect(() => {

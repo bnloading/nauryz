@@ -7,6 +7,7 @@ import SectionSeparator from "@/components/SectionSeparator";
 export default function Gifts() {
   const [copiedAccount, setCopiedAccount] = useState(null);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const accounts = config.data.gifts?.accounts ?? [];
 
   // Set animation to run once on component mount
   useEffect(() => {
@@ -39,7 +40,7 @@ export default function Gifts() {
               transition={{ delay: 0.2 }}
               className="inline-block text-gray-600 font-medium"
             >
-              Hadiah Pernikahan
+              {config.data.texts.giftsTagline}
             </motion.span>
 
             <motion.h2
@@ -48,7 +49,7 @@ export default function Gifts() {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl font-serif text-gray-900"
             >
-              Berikan Hadiah
+              {config.data.texts.giftsTitle}
             </motion.h2>
 
             {/* Decorative Divider */}
@@ -71,21 +72,22 @@ export default function Gifts() {
               className="space-y-4 max-w-md mx-auto"
             >
               {/* Arabic InsyaAllah */}
-              <p className="font-arabic text-xl text-gray-800">إن شاء الله</p>
+              <p className="font-arabic text-xl text-gray-800">
+                {config.data.texts.giftsInsyaAllahArabic}
+              </p>
 
               {/* Main Message */}
               <p className="text-gray-600 leading-relaxed">
-                Insya Allah, Kami Akan Menyalurkan Semua Hadiah yang Diberikan
-                ke Beberapa Masjid dan Lembaga yang Membutuhkan
+                {config.data.texts.giftsMainMessage}
               </p>
 
               {/* Arabic Dua */}
               <div className="space-y-2">
                 <p className="font-arabic text-lg text-gray-800">
-                  جزاكم الله خيرا وبارك الله فيكم
+                  {config.data.texts.giftsDuaArabic}
                 </p>
                 <p className="text-gray-600 italic text-sm">
-                  Jazakumullahu khairan, Barakallah fiikum
+                  {config.data.texts.giftsDuaLatin}
                 </p>
               </div>
             </motion.div>
@@ -105,7 +107,7 @@ export default function Gifts() {
 
           {/* Bank Accounts Grid */}
           <div className="max-w-2xl mx-auto grid gap-6">
-            {config.data.banks.map((account, index) => (
+            {accounts.map((account, index) => (
               <motion.div
                 key={account.accountNumber}
                 initial={{ opacity: 0, y: 20 }}
@@ -151,7 +153,9 @@ export default function Gifts() {
                           <Copy className="w-4 h-4" />
                         )}
                         <span className="text-sm">
-                          {copiedAccount === account.bank ? "Copied!" : "Copy"}
+                          {copiedAccount === account.bank
+                            ? config.data.texts.copied
+                            : config.data.texts.copy}
                         </span>
                       </motion.button>
                     </div>
@@ -159,6 +163,12 @@ export default function Gifts() {
                 </div>
               </motion.div>
             ))}
+
+            {accounts.length === 0 && (
+              <div className="text-center text-gray-500 bg-white/70 rounded-2xl p-6 border border-gray-100">
+                Шот деректерін config ішінде толтырыңыз.
+              </div>
+            )}
           </div>
         </div>
       </section>

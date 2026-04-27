@@ -71,7 +71,7 @@ const LandingPage = ({ onOpenInvitation }) => {
         <div
           className="absolute inset-0  bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/images/Aibek/Aibek1.jfif")',
+            backgroundImage: `url("${config.data.media.landingBackground}")`,
             backgroundPosition: "center 25%",
           }}
         />
@@ -143,11 +143,11 @@ const LandingPage = ({ onOpenInvitation }) => {
           {/* Top Image with Gradient - Increased height and adjusted gradient */}
           <div className="relative w-full h-64 sm:h-72 mb-6 rounded-3xl overflow-hidden">
             <img
-              src="/images/Aibek/image.png"
-              alt="Wedding"
+              src={config.data.media.landingCover}
+              alt={config.data.title}
               className="absolute inset-0 w-full h-[100%] object-cover scale-105"
               style={{
-                objectPosition: "center 25%",
+                objectPosition: "center 55%",
               }}
               loading="eager"
             />
@@ -241,7 +241,7 @@ const LandingPage = ({ onOpenInvitation }) => {
                   className="group relative w-full bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 text-white px-8 py-4 rounded-2xl font-medium shadow-xl hover:shadow-gray-400/40 transition-all duration-300 hover:from-gray-700 hover:via-gray-800 hover:to-gray-900"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2 text-lg">
-                    <span>Шақыруды ашу</span>
+                    <span>{config.data.texts.invitationButton}</span>
                     <motion.span
                       animate={{ x: [0, 5, 0] }}
                       transition={{ repeat: Infinity, duration: 1.5 }}
