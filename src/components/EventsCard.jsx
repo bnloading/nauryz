@@ -12,6 +12,7 @@ import {
   Calendar as CalendarIcon,
 } from "lucide-react";
 import { formatEventDate } from "@/lib/formatEventDate";
+import config from "@/config/config";
 
 const Modal = ({ isOpen, onClose, children }) => {
   return (
@@ -155,7 +156,9 @@ END:VCALENDAR`;
         <div className="space-y-3 text-gray-600">
           <div className="flex items-center space-x-3">
             <Calendar className="w-5 h-5 text-gray-600" />
-            <span>{formatEventDate(eventData.date)}</span>
+            <span>
+              {formatEventDate(eventData.date, "full", config.data.locale)}
+            </span>
           </div>
           <div className="flex items-center space-x-3">
             <Clock className="w-5 h-5 text-gray-600" />

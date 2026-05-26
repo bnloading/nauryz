@@ -35,7 +35,7 @@ const ImageLoader = ({ src, alt, className, onClick }) => {
 
       {error && (
         <div className="absolute inset-0 bg-gray-100 flex items-center justify-center text-sm text-gray-500">
-          Сурет жүктелмеді
+          {config.data.texts.imageError}
         </div>
       )}
     </div>
@@ -62,7 +62,7 @@ export default function Gallery() {
           className="min-h-screen relative overflow-hidden py-20 bg-gray-100"
         >
           <div className="container mx-auto px-4 text-center text-gray-500">
-            Галерея суреттерін config ішінде толтырыңыз.
+            {config.data.texts.galleryEmpty}
           </div>
         </section>
         <SectionSeparator variant="elegant" />

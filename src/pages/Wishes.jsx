@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Send } from "lucide-react";
 import { db } from "@/lib/firebase";
+import config from "@/config/config";
 import {
   collection,
   addDoc,
@@ -47,8 +48,8 @@ export default function Wishes() {
       },
       (error) => {
         console.error("Error fetching comments:", error);
-        setError("Тілектерді жүктеу кезінде қате шықты");
-      }
+        setError(config.data.texts.errorFetch);
+      },
     );
 
     return () => unsubscribe();
@@ -68,12 +69,12 @@ export default function Wishes() {
     setError(null);
 
     if (!userName.trim()) {
-      setError("Атыңызды енгізіңіз");
+      setError(config.data.texts.errorName);
       return;
     }
 
     if (!newComment.trim() && !rsvpStatus) {
-      setError("Тілегіңізді немесе қатысу жауабын енгізіңіз");
+      setError(config.data.texts.errorWishOrRsvp);
       return;
     }
 
@@ -108,7 +109,7 @@ export default function Wishes() {
       }, 3000);
     } catch (error) {
       console.error("Жіберу қатесі:", error);
-      setError("Деректерді жіберу кезінде қате шықты");
+      setError(config.data.texts.errorSubmit);
     } finally {
       setWishSubmitting(false);
     }
@@ -127,12 +128,12 @@ export default function Wishes() {
         {/* Success messages */}
         {wishSuccess && (
           <div className="mb-4 p-4 bg-green-50 text-green-600 rounded-lg">
-            Тілегіңіз сәтті жіберілді
+            {config.data.texts.wishSuccess}
           </div>
         )}
         {rsvpSuccess && (
           <div className="mb-4 p-4 bg-green-50 text-green-600 rounded-lg">
-            Қатысу жауабы жіберілді
+            {config.data.texts.rsvpSuccess}
           </div>
         )}
 
@@ -177,7 +178,6 @@ export default function Wishes() {
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
-             
             </div>
           </div>
         )}
@@ -189,12 +189,14 @@ export default function Wishes() {
         >
           {/* Name */}
           <div className="space-y-1">
-            <label className="text-sm text-gray-800">Сіздің атыңыз</label>
+            <label className="text-sm text-gray-800">
+              {config.data.texts.nameLabel}
+            </label>
             <input
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              placeholder="Атыңызды енгізіңіз..."
+              placeholder={config.data.texts.namePlaceholder}
               className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200"
               required
             />
@@ -202,11 +204,13 @@ export default function Wishes() {
 
           {/* Wish */}
           <div className="space-y-1">
-            <label className="text-sm text-gray-800">Тілегіңіз</label>
+            <label className="text-sm text-gray-800">
+              {config.data.texts.wishLabel}
+            </label>
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
-              placeholder="Тілегіңізді жазыңыз..."
+              placeholder={config.data.texts.wishPlaceholder}
               className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 h-28"
             />
           </div>
@@ -216,7 +220,7 @@ export default function Wishes() {
             {[
               {
                 value: "attending",
-                label: "Қатысамын",
+                label: config.data.texts.rsvpAttending,
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -235,7 +239,7 @@ export default function Wishes() {
               },
               {
                 value: "not_attending",
-                label: "Қатыса алмаймын",
+                label: config.data.texts.rsvpNotAttending,
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -254,7 +258,7 @@ export default function Wishes() {
               },
               {
                 value: "uncertain",
-                label: "Белгісіз",
+                label: config.data.texts.rsvpUncertain,
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -301,11 +305,11 @@ export default function Wishes() {
             className="w-full bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
           >
             {wishSubmitting ? (
-              <span>Жіберілуде...</span>
+              <span>{config.data.texts.submitting}</span>
             ) : (
               <>
                 <Send className="w-4 h-4" />
-                <span>Жіберу</span>
+                <span>{config.data.texts.submit}</span>
               </>
             )}
           </button>

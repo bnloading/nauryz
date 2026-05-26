@@ -110,7 +110,7 @@ export const formatEventDateIndonesian = (isoString, format = "full") => {
  * // returns "00:00"
  * formatEventDate("2024-01-01T00:00:00.000Z", "time")
  */
-export const formatEventDate = (isoString, format = "full") => {
+export const formatEventDate = (isoString, format = "full", locale = "kk") => {
   const date = new Date(isoString);
 
   const formats = {
@@ -162,6 +162,36 @@ export const formatEventDate = (isoString, format = "full") => {
     Saturday: "Сенбі",
   };
 
+  // Mongolian month names mapping
+  const monthsMongolian = {
+    January: "1-р сар",
+    February: "2-р сар",
+    March: "3-р сар",
+    April: "4-р сар",
+    May: "5-р сар",
+    June: "6-р сар",
+    July: "7-р сар",
+    August: "8-р сар",
+    September: "9-р сар",
+    October: "10-р сар",
+    November: "11-р сар",
+    December: "12-р сар",
+  };
+
+  // Mongolian day names mapping
+  const daysMongolian = {
+    Sunday: "Ням",
+    Monday: "Даваа",
+    Tuesday: "Мягмар",
+    Wednesday: "Лхагва",
+    Thursday: "Пүрэв",
+    Friday: "Баасан",
+    Saturday: "Бямба",
+  };
+
+  const months = locale === "mn" ? monthsMongolian : monthsKazakh;
+  const days = locale === "mn" ? daysMongolian : daysKazakh;
+
   let formatted = date.toLocaleDateString("en-US", formats[format]);
 
   // Handle time format separately
@@ -169,20 +199,24 @@ export const formatEventDate = (isoString, format = "full") => {
     return date.toLocaleTimeString("en-US", formats[format]);
   }
 
-  // Replace English month and day names with Kazakh ones
-  Object.keys(monthsKazakh).forEach((english) => {
-    formatted = formatted.replace(english, monthsKazakh[english]);
+  // Replace English month and day names with locale-appropriate ones
+  Object.keys(months).forEach((english) => {
+    formatted = formatted.replace(english, months[english]);
   });
 
-  Object.keys(daysKazakh).forEach((english) => {
-    formatted = formatted.replace(english, daysKazakh[english]);
+  Object.keys(days).forEach((english) => {
+    formatted = formatted.replace(english, days[english]);
   });
 
-  // Format adjustment for full date
+  // Format adjustment for full date: reorder to "22 Тамыз 2026, Сенбі"
   if (format === "full") {
     const parts = formatted.split(", ");
-    if (parts.length === 2) {
-      formatted = `${parts[0]}, ${parts[1]}`;
+    if (parts.length === 3) {
+      const [weekday, monthDay, year] = parts;
+      const mdParts = monthDay.split(" ");
+      const day = mdParts[mdParts.length - 1];
+      const month = mdParts.slice(0, -1).join(" ");
+      formatted = `${day} ${month} ${year}, ${weekday}`;
     }
   }
 

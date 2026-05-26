@@ -192,7 +192,11 @@ const LandingPage = ({ onOpenInvitation }) => {
                 <div className="inline-flex flex-col items-center space-y-1 bg-white/90 px-6 py-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
                   <Calendar className="w-6 h-6 text-gray-400" />
                   <p className="text-gray-700 font-medium tracking-wide">
-                    {formatEventDate(config.data.date)}
+                    {formatEventDate(
+                      config.data.date,
+                      "full",
+                      config.data.locale,
+                    )}
                   </p>
                 </div>
 

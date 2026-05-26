@@ -3,29 +3,26 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Home, CalendarHeart, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
+import config from "@/config/config";
 
-const menuItems = [
-  { id: "home", icon: Home, label: "Басты бет", href: "#home" },
-  { id: "event", icon: CalendarHeart, label: "Іс-шара", href: "#event" },
-  { id: "location", icon: MapPin, label: "Мекенжай", href: "#location" },
-];
-
-/**
- * BottomBar - төменгі навигациялық панельді көрсететін React функционалдық компоненті.
- *
- * Бұл компонент кіру анимациясы үшін Framer Motion қолданады, мөлдірлік және
- * тік қозғалыс үшін біркелкі өтулерді қамтамасыз етеді. Ол белсенді күйге байланысты
- * көрінісін өзгертетін навигациялық мәзір элементтерін көрсетеді.
- *
- * @component
- * @example
- * // Қолдану үлгісі:
- * <BottomBar />
- *
- * @returns {JSX.Element} Анимацияланған төменгі навигациялық панельді қамтитын JSX элементі.
- */
 const BottomBar = () => {
   const [active, setActive] = React.useState("home");
+
+  const menuItems = [
+    { id: "home", icon: Home, label: config.data.texts.navHome, href: "#home" },
+    {
+      id: "event",
+      icon: CalendarHeart,
+      label: config.data.texts.navEvent,
+      href: "#event",
+    },
+    {
+      id: "location",
+      icon: MapPin,
+      label: config.data.texts.navLocation,
+      href: "#location",
+    },
+  ];
 
   React.useEffect(() => {
     const onScroll = () => {

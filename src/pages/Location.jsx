@@ -60,7 +60,7 @@ export default function Location() {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-serif text-gray-900 font-montserrat"
             >
-              Мекенжай
+              {config.data.texts.locationTitle}
             </motion.h2>
 
             {/* Decorative Divider */}
@@ -114,7 +114,11 @@ export default function Location() {
                   <div className="flex items-center space-x-4">
                     <CalendarCheck className="w-5 h-5 text-gray-600" />
                     <p className="text-gray-700">
-                      {formatEventDate(config.data.date)}
+                      {formatEventDate(
+                        config.data.date,
+                        "full",
+                        config.data.locale,
+                      )}
                     </p>
                   </div>
 
@@ -130,7 +134,9 @@ export default function Location() {
                       className="w-full flex items-center justify-center gap-1.5 bg-white text-gray-700 px-4 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors text-sm"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      <span className="font-semibold">Картаны көру</span>
+                      <span className="font-semibold">
+                        {config.data.texts.mapButtonText}
+                      </span>
                     </motion.a>
                   </div>
                 </div>

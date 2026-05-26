@@ -39,7 +39,9 @@ const FastImage = ({ src, alt, className, onClick }) => {
         <div
           className={`${className} bg-gray-200 flex items-center justify-center`}
         >
-          <span className="text-gray-500 text-xs">Сурет жүктелмеді</span>
+          <span className="text-gray-500 text-xs">
+            {config.data.texts.imageError}
+          </span>
         </div>
       )}
     </>
@@ -67,6 +69,7 @@ export default function Hero() {
 
   const CountdownTimer = ({ targetDate }) => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+    const labels = config.data.texts.countdown;
 
     function calculateTimeLeft() {
       const difference = +new Date(targetDate) - +new Date();
@@ -74,10 +77,10 @@ export default function Hero() {
 
       if (difference > 0) {
         timeLeft = {
-          күн: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          сағ: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          мин: Math.floor((difference / 1000 / 60) % 60),
-          сек: Math.floor((difference / 1000) % 60),
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
         };
       }
       return timeLeft;
@@ -103,7 +106,7 @@ export default function Hero() {
                 {String(value).padStart(2, "0")}
               </span>
               <span className="text-[10px] sm:text-xs text-gray-700 capitalize">
-                {interval}
+                {labels[interval]}
               </span>
             </motion.div>
             {index < Object.entries(timeLeft).length - 1 && (
