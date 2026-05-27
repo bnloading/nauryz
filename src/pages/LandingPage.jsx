@@ -216,17 +216,21 @@ const LandingPage = ({ onOpenInvitation }) => {
                 className="text-center space-y-4 my-8"
               >
                 <div className="space-y-3">
-                  <h1 className="text-5xl sm:text-6xl font-custom text-gray-900 leading-tight tracking-wide">
-                    {config.data.groomName}
+                  <div className="flex flex-col items-center gap-1">
+                    <h1 className="text-5xl sm:text-6xl font-custom text-gray-900 leading-tight tracking-wide">
+                      {config.data.groomName}
+                    </h1>
                     <motion.span
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="inline-block text-gray-600 mx-3"
+                      className="block text-gray-600 text-3xl leading-none"
                     >
                       ♥
                     </motion.span>
-                    {config.data.brideName}
-                  </h1>
+                    <h1 className="text-5xl sm:text-6xl font-custom text-gray-900 leading-tight tracking-wide">
+                      {config.data.brideName}
+                    </h1>
+                  </div>
                   <div className="h-0.5 w-24 mx-auto bg-gray-400" />
                 </div>
               </motion.div>

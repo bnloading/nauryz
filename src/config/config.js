@@ -6,6 +6,8 @@ const _slug =
   typeof window !== "undefined"
     ? window.location.pathname.replace(/^\//, "").split("/")[0]
     : "";
-const config = configs[_slug] || configs.ularbek;
+
+const KNOWN_SLUGS = ["ularbek", "mn"];
+const config = KNOWN_SLUGS.includes(_slug) ? configs[_slug] : configs.ularbek;
 
 export default config;
