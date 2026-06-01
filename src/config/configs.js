@@ -198,7 +198,7 @@ const configs = {
       parentGroom: "Бекболат",
       parentBride: "Баршагүл",
       date: "2026-06-24",
-      time: "18:00",
+      time: "17:00",
       location: '"Sky Palace" тойханасы',
       address: 'Монгол, "Sky Palace" тойханасы',
       texts: {
@@ -277,7 +277,7 @@ const configs = {
         {
           title: "Той",
           date: "2026-06-24",
-          startTime: "18:00",
+          startTime: "17:00",
           endTime: "00:00",
           location: '"Sky Palace" тойханасы',
           address: 'Монгол, "Sky Palace" тойханасы',
@@ -324,7 +324,7 @@ const configs = {
       parentGroom: "Бекболат",
       parentBride: "Баршагүл",
       date: "2026-06-24",
-      time: "18:00",
+      time: "17:00",
       location: '"Sky Palace" Хуримын ордон',
       address: 'Монгол, Баян-Өлгий, "Sky Palace" Хуримын ордон',
       texts: {
@@ -403,7 +403,7 @@ const configs = {
         {
           title: "Хурим",
           date: "2026-06-24",
-          startTime: "18:00",
+          startTime: "17:00",
           endTime: "00:00",
           location: '"Sky Palace" Хуримын ордон',
           address: 'Монгол, Баян-Өлгий, "Sky Palace" Хуримын ордон',

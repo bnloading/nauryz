@@ -72,7 +72,8 @@ export default function Hero() {
     const labels = config.data.texts.countdown;
 
     function calculateTimeLeft() {
-      const difference = +new Date(targetDate) - +new Date();
+      const targetDateTime = `${targetDate}T${config.data.time}:00`;
+      const difference = +new Date(targetDateTime) - +new Date();
       let timeLeft = {};
 
       if (difference > 0) {
