@@ -281,6 +281,7 @@ const configs = {
           endTime: "00:00",
           location: '"Sky Palace" тойханасы',
           address: 'Монгол, "Sky Palace" тойханасы',
+          note: "ТОЙ САҒАТЫНДА БАСТАЛАТЫНЫН ЕСКЕРТЕМІЗ!",
         },
       ],
       audio: {
