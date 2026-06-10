@@ -148,10 +148,10 @@ export default function Hero() {
             <Heart
               className={`w-${Math.floor(Math.random() * 2) + 8} h-${Math.floor(Math.random() * 2) + 8} ${
                 i % 3 === 0
-                  ? "text-gray-500"
+                  ? "text-fuchsia-400/70"
                   : i % 3 === 1
-                    ? "text-gray-600"
-                    : "text-gray-700"
+                    ? "text-rose-400/70"
+                    : "text-red-400/70"
               }`}
               fill="currentColor"
             />
@@ -328,7 +328,7 @@ export default function Hero() {
                         {config.data.groomName}
                         <span className="inline-block mx-4">
                           <Heart
-                            className="w-8 h-8 sm:w-12 sm:h-12 text-red-500 inline"
+                            className="w-8 h-8 sm:w-12 sm:h-12 text-rose-500 inline drop-shadow-[0_0_10px_rgba(244,63,94,0.35)]"
                             fill="currentColor"
                           />
                         </span>

@@ -304,7 +304,7 @@ export default function Wishes() {
           <button
             type="submit"
             disabled={wishSubmitting}
-            className="w-full bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+            className="w-full bg-gradient-to-r from-fuchsia-600 via-rose-500 to-red-500 text-white px-6 py-3 rounded-2xl shadow-lg shadow-rose-300/40 hover:from-fuchsia-700 hover:via-rose-600 hover:to-red-600 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:shadow-none"
           >
             {wishSubmitting ? (
               <span>{config.data.texts.submitting}</span>

@@ -119,7 +119,7 @@ const LandingPage = ({ onOpenInvitation }) => {
             ease: "easeInOut",
           }}
         >
-          <Heart className="w-8 h-8 text-gray-400" fill="currentColor" />
+          <Heart className="w-8 h-8 text-fuchsia-400/70" fill="currentColor" />
         </motion.div>
       ))}
 
