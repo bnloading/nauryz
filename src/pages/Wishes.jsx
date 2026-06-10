@@ -123,10 +123,13 @@ export default function Wishes() {
   };
 
   return (
-    <section id="wishes" className="min-h-screen py-20 px-4 bg-gray-100">
+    <section
+      id="wishes"
+      className="min-h-screen py-20 px-4 bg-gradient-to-b from-rose-50 via-fuchsia-50 to-white"
+    >
       <div className="max-w-3xl mx-auto">
         {error && (
-          <div className="mb-4 p-4 bg-gray-100 text-gray-700 rounded-lg">
+          <div className="mb-4 p-4 bg-rose-50 text-rose-700 rounded-lg border border-rose-100">
             {error}
           </div>
         )}
@@ -150,15 +153,15 @@ export default function Wishes() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
-                className="bg-white rounded-xl shadow-sm border border-gray-100 p-6"
+                className="bg-white rounded-xl shadow-sm shadow-rose-100/60 border border-rose-100 p-6"
               >
-                <div className="font-medium text-gray-900 mb-2">
+                <div className="font-medium text-rose-950 mb-2">
                   {comments[currentIndex].userName}
                 </div>
-                <div className="text-gray-700 mb-3">
+                <div className="text-fuchsia-900 mb-3">
                   {comments[currentIndex].comment}
                 </div>
-                <div className="text-sm text-gray-400">
+                <div className="text-sm text-rose-400">
                   {comments[currentIndex].timestamp
                     ? new Date(
                         comments[currentIndex].timestamp,
@@ -171,16 +174,16 @@ export default function Wishes() {
             <div className="flex justify-between items-center mt-4">
               <button
                 onClick={prevWish}
-                className="p-2 bg-white border rounded-full"
+                className="p-2 bg-white border border-rose-100 text-rose-500 rounded-full shadow-sm shadow-rose-100/60"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-fuchsia-600">
                 {currentIndex + 1} / {comments.length}
               </span>
               <button
                 onClick={nextWish}
-                className="p-2 bg-white border rounded-full"
+                className="p-2 bg-white border border-rose-100 text-rose-500 rounded-full shadow-sm shadow-rose-100/60"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -190,10 +193,10 @@ export default function Wishes() {
 
         <motion.form
           onSubmit={handleCombinedSubmit}
-          className="space-y-6 bg-white rounded-xl shadow-sm border border-gray-100 p-6"
+          className="space-y-6 bg-white rounded-xl shadow-sm shadow-fuchsia-100/50 border border-rose-100 p-6"
         >
           <div className="space-y-1">
-            <label className="text-sm text-gray-800">
+            <label className="text-sm text-rose-900">
               {config.data.texts.nameLabel}
             </label>
             <input
@@ -201,20 +204,20 @@ export default function Wishes() {
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               placeholder={config.data.texts.namePlaceholder}
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200"
+              className="w-full px-4 py-3 rounded-lg bg-rose-50/60 border border-rose-100 focus:border-fuchsia-300 focus:outline-none"
               required
             />
           </div>
 
           <div className="space-y-1">
-            <label className="text-sm text-gray-800">
+            <label className="text-sm text-rose-900">
               {config.data.texts.wishLabel}
             </label>
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               placeholder={config.data.texts.wishPlaceholder}
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 h-28"
+              className="w-full px-4 py-3 rounded-lg bg-rose-50/60 border border-rose-100 h-28 focus:border-fuchsia-300 focus:outline-none"
             />
           </div>
 
@@ -282,8 +285,8 @@ export default function Wishes() {
                 key={option.value}
                 className={`relative group cursor-pointer flex flex-col items-center justify-center rounded-xl border px-6 py-6 transition-all duration-200 ${
                   rsvpStatus === option.value
-                    ? "border-gray-500 bg-gray-50 shadow-md text-gray-600"
-                    : "border-gray-200 bg-white hover:border-gray-300 hover:shadow"
+                    ? "border-rose-300 bg-rose-50 shadow-md text-rose-700"
+                    : "border-rose-100 bg-white hover:border-fuchsia-200 hover:shadow hover:text-fuchsia-700"
                 }`}
               >
                 <input
