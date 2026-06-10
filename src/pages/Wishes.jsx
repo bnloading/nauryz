@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Send } from "lucide-react";
-import { db } from "@/lib/firebase";
+import { realtimeDb } from "@/lib/firebase";
 import config from "@/config/config";
 import {
-  collection,
-  addDoc,
+  onValue,
+  orderByChild,
+  push,
   query,
-  orderBy,
+  ref,
   serverTimestamp,
-  onSnapshot,
-} from "firebase/firestore";
+  set,
+} from "firebase/database";
 import SectionSeparator from "@/components/SectionSeparator";
 
 export default function Wishes() {
@@ -24,7 +25,6 @@ export default function Wishes() {
   const [error, setError] = useState(null);
   const [rsvpSuccess, setRsvpSuccess] = useState(false);
 
-  // Авто-слайдер
   useEffect(() => {
     if (comments.length > 0) {
       const timer = setInterval(nextWish, 5000);
@@ -32,17 +32,23 @@ export default function Wishes() {
     }
   }, [currentIndex, comments.length]);
 
-  // Тілектерді алу
   useEffect(() => {
-    const q = query(collection(db, "wishes"), orderBy("timestamp", "desc"));
+    const wishesQuery = query(
+      ref(realtimeDb, "wishes"),
+      orderByChild("timestamp"),
+    );
 
-    const unsubscribe = onSnapshot(
-      q,
+    const unsubscribe = onValue(
+      wishesQuery,
       (snapshot) => {
-        const updatedComments = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
+        const updatedComments = Object.entries(snapshot.val() ?? {})
+          .map(([id, value]) => ({
+            id,
+            ...value,
+          }))
+          .sort(
+            (first, second) => (second.timestamp ?? 0) - (first.timestamp ?? 0),
+          );
         setComments(updatedComments);
         setError(null);
       },
@@ -63,7 +69,6 @@ export default function Wishes() {
     setCurrentIndex((prev) => (prev - 1 + comments.length) % comments.length);
   };
 
-  // Жалғыз батырма арқылы екі дерек жіберу
   const handleCombinedSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -82,7 +87,8 @@ export default function Wishes() {
 
     try {
       if (newComment.trim()) {
-        await addDoc(collection(db, "wishes"), {
+        const wishRef = push(ref(realtimeDb, "wishes"));
+        await set(wishRef, {
           userName: userName.trim(),
           comment: newComment.trim(),
           timestamp: serverTimestamp(),
@@ -92,7 +98,8 @@ export default function Wishes() {
       }
 
       if (rsvpStatus) {
-        await addDoc(collection(db, "rsvp"), {
+        const rsvpRef = push(ref(realtimeDb, "rsvp"));
+        await set(rsvpRef, {
           userName: userName.trim(),
           rsvpStatus,
           timestamp: serverTimestamp(),
@@ -118,14 +125,12 @@ export default function Wishes() {
   return (
     <section id="wishes" className="min-h-screen py-20 px-4 bg-gray-100">
       <div className="max-w-3xl mx-auto">
-        {/* Error */}
         {error && (
           <div className="mb-4 p-4 bg-gray-100 text-gray-700 rounded-lg">
             {error}
           </div>
         )}
 
-        {/* Success messages */}
         {wishSuccess && (
           <div className="mb-4 p-4 bg-green-50 text-green-600 rounded-lg">
             {config.data.texts.wishSuccess}
@@ -137,7 +142,6 @@ export default function Wishes() {
           </div>
         )}
 
-        {/* Слайдер */}
         {comments.length > 0 && (
           <div className="mb-8 relative">
             <AnimatePresence mode="wait">
@@ -156,8 +160,10 @@ export default function Wishes() {
                 </div>
                 <div className="text-sm text-gray-400">
                   {comments[currentIndex].timestamp
-                    ?.toDate()
-                    .toLocaleDateString()}
+                    ? new Date(
+                        comments[currentIndex].timestamp,
+                      ).toLocaleDateString()
+                    : ""}
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -182,12 +188,10 @@ export default function Wishes() {
           </div>
         )}
 
-        {/* Біріктірілген форма */}
         <motion.form
           onSubmit={handleCombinedSubmit}
           className="space-y-6 bg-white rounded-xl shadow-sm border border-gray-100 p-6"
         >
-          {/* Name */}
           <div className="space-y-1">
             <label className="text-sm text-gray-800">
               {config.data.texts.nameLabel}
@@ -202,7 +206,6 @@ export default function Wishes() {
             />
           </div>
 
-          {/* Wish */}
           <div className="space-y-1">
             <label className="text-sm text-gray-800">
               {config.data.texts.wishLabel}
@@ -215,7 +218,6 @@ export default function Wishes() {
             />
           </div>
 
-          {/* RSVP */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               {

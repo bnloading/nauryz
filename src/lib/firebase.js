@@ -1,37 +1,55 @@
 import { initializeApp } from "firebase/app";
+import { getAnalytics, isSupported } from "firebase/analytics";
 import {
-  getFirestore,
-  collection,
+  getDatabase,
+  onValue,
+  orderByChild,
   query,
-  orderBy,
-  onSnapshot,
-} from "firebase/firestore";
+  ref,
+} from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDN_HPzbKc_eLjbCEqoLuzGECbYoFhuOwk",
-  authDomain: "saya-24ec4.firebaseapp.com",
-  projectId: "saya-24ec4",
-  storageBucket: "saya-24ec4.firebasestorage.app",
-  messagingSenderId: "864275314522",
-  appId: "1:864275314522:web:2941818dbd6a9cd7506563",
-  measurementId: "G-YLK41QNRWW",
+  apiKey: "AIzaSyCJ70kalyLpcLqrUEONR1leIGzMVHmmlfc",
+  authDomain: "quatcl-2552a.firebaseapp.com",
+  databaseURL: "https://quatcl-2552a-default-rtdb.firebaseio.com",
+  projectId: "quatcl-2552a",
+  storageBucket: "quatcl-2552a.firebasestorage.app",
+  messagingSenderId: "528327145000",
+  appId: "1:528327145000:web:041d0bac5245a101e3e71d",
+  measurementId: "G-LH7GNE3VLQ",
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+export const realtimeDb = getDatabase(app);
+export let analytics = null;
 
-// Add this function to handle real-time comments subscription
+if (typeof window !== "undefined") {
+  isSupported()
+    .then((supported) => {
+      if (supported) {
+        analytics = getAnalytics(app);
+      }
+    })
+    .catch(() => {
+      analytics = null;
+    });
+}
+
 export const subscribeToComments = (callback) => {
-  const q = query(
-    collection(db, "gallery-comments"),
-    orderBy("timestamp", "desc")
+  const commentsQuery = query(
+    ref(realtimeDb, "gallery-comments"),
+    orderByChild("timestamp"),
   );
 
-  return onSnapshot(q, (snapshot) => {
-    const comments = snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+  return onValue(commentsQuery, (snapshot) => {
+    const comments = Object.entries(snapshot.val() ?? {})
+      .map(([id, value]) => ({
+        id,
+        ...value,
+      }))
+      .sort(
+        (first, second) => (second.timestamp ?? 0) - (first.timestamp ?? 0),
+      );
     callback(comments);
   });
 };

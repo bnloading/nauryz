@@ -198,7 +198,7 @@ const configs = {
       parentGroom: "Қадырбек",
       parentBride: "Ақмарал",
       date: "2026-08-01",
-      time: "17:00",
+      time: "19:00",
       location: "Шынар ресторан",
       address: "Шынар ресторан",
       texts: {
@@ -277,7 +277,7 @@ const configs = {
         {
           title: "Той",
           date: "2026-08-01",
-          startTime: "17:00",
+          startTime: "19:00",
           endTime: "00:00",
           location: "Шынар ресторан",
           address: "Шынар ресторан",
