@@ -101,17 +101,17 @@ export default function Hero() {
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="flex flex-col items-center p-2 bg-white/80 backdrop-blur-sm rounded-lg border border-rose-100 shadow-sm shadow-fuchsia-100/60 min-w-[60px]"
+              className="flex flex-col items-center p-2 bg-white/80 backdrop-blur-sm rounded-lg border border-gray-100 min-w-[60px]"
             >
-              <span className="text-lg sm:text-xl font-bold text-rose-700">
+              <span className="text-lg sm:text-xl font-bold text-gray-800">
                 {String(value).padStart(2, "0")}
               </span>
-              <span className="text-[10px] sm:text-xs text-fuchsia-700 capitalize">
+              <span className="text-[10px] sm:text-xs text-gray-700 capitalize">
                 {labels[interval]}
               </span>
             </motion.div>
             {index < Object.entries(timeLeft).length - 1 && (
-              <span className="mx-1 text-rose-300">:</span>
+              <span className="mx-1 text-gray-400">:</span>
             )}
           </div>
         ))}
@@ -199,23 +199,23 @@ export default function Hero() {
     <>
       <section
         id="home"
-        className="min-h-screen flex flex-col items-center justify-center px-4 py-16 sm:py-20 text-center relative overflow-hidden bg-gradient-to-b from-rose-50 via-fuchsia-50 to-white"
+        className="min-h-screen flex flex-col items-center justify-center px-4 py-16 sm:py-20 text-center relative overflow-hidden bg-gray-100"
       >
         {/* Animated Background Patterns */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('/images/bg-pattern.png')] opacity-5 animate-fade-in" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-rose-100/40 via-fuchsia-100/20 to-red-50/30" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-gray-100/20 to-gray-100/20" />
 
           {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-b from-fuchsia-200/30 to-transparent rounded-full blur-3xl transform translate-x-1/4 -translate-y-1/4" />
-          <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-t from-rose-200/30 to-transparent rounded-full blur-3xl transform -translate-x-1/4 translate-y-1/4" />
+          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-b from-gray-200/20 to-transparent rounded-full blur-3xl transform translate-x-1/4 -translate-y-1/4" />
+          <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-t from-gray-200/20 to-transparent rounded-full blur-3xl transform -translate-x-1/4 translate-y-1/4" />
 
           {/* Floating Particles */}
           <div className="absolute inset-0 opacity-30">
             {[...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-rose-300/50 rounded-full animate-float"
+                className="absolute w-2 h-2 bg-gray-300/50 rounded-full animate-float"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -247,7 +247,7 @@ export default function Hero() {
               className="relative mx-auto w-70 h-70 sm:w-80 sm:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl group cursor-pointer "
               onClick={() => setIsImageModalOpen(true)}
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-rose-500/25 group-hover:opacity-75 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-500/20 group-hover:opacity-75 transition-opacity" />
               <FastImage
                 src={config.data.media.heroMainPhoto}
                 alt={`${config.data.groomName} & ${config.data.brideName}`}
@@ -257,8 +257,8 @@ export default function Hero() {
 
               {/* Hover Overlay */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-rose-100">
-                  <span className="text-rose-700 text-sm font-medium">
+                <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
+                  <span className="text-gray-600 text-sm font-medium">
                     {config.data.texts.zoomHint}
                   </span>
                 </div>
@@ -270,7 +270,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="absolute -inset-2 border-4 border-rose-100/70 rounded-full -z-10"
+              className="absolute -inset-2 border-4 border-gray-100/50 rounded-full -z-10"
             />
           </motion.div>
 
@@ -281,12 +281,12 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="inline-block mx-auto relative"
           >
-            <span className="absolute inset-0 bg-rose-200 blur-md opacity-60" />
-            <span className="relative px-6 py-2 text-sm bg-white/90 text-rose-700 rounded-full border border-rose-200 shadow-sm shadow-rose-100/60">
+            <span className="absolute inset-0 bg-gray-200 blur-md opacity-50" />
+            <span className="relative px-6 py-2 text-sm bg-gray-50 text-gray-600 rounded-full border border-gray-200 shadow-sm">
               {config.data.texts.heroBanner}
             </span>
           </motion.div>
-          <h1 className="font-Toy text-3xl text-rose-950">
+          <h1 className="font-Toy text-3xl text-gray-900">
             {config.data.texts.heroGreeting}
           </h1>
 
@@ -299,11 +299,11 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
             className="relative max-w-md mx-auto"
           >
-            <div className="absolute inset-0 bg-white/75 backdrop-blur-lg rounded-2xl shadow-xl shadow-rose-100/60" />
-            <div className="relative px-6 py-8 rounded-2xl border border-rose-100">
+            <div className="absolute inset-0 bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl" />
+            <div className="relative px-6 py-8 rounded-2xl border border-gray-100">
               {/* Decorative elements */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="w-40 h-1 bg-gradient-to-r from-transparent via-rose-300 to-transparent" />
+                <div className="w-40 h-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
               </div>
 
               <div className="space-y-6 text-center">
@@ -316,7 +316,7 @@ export default function Hero() {
                   transition={{ delay: 1.1 }}
                   className="space-y-1 py-1"
                 >
-                  <p className="text-rose-950 font-montserrat text-lg">
+                  <p className="text-gray-800 font-montserrat text-lg">
                     {config.data.texts.heroInvitePrefix}
                     <div className="space-y-4">
                       <motion.h2
@@ -337,7 +337,7 @@ export default function Hero() {
                     </div>
                     {config.data.texts.heroInviteSuffix}
                   </p>
-                  <p className="text-2xl text-fuchsia-800 font-cormorant font-semibold">
+                  <p className="text-2xl text-gray-700 font-cormorant font-semibold">
                     {guestName ? guestName : ""}
                   </p>
                 </motion.div>

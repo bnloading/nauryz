@@ -165,13 +165,13 @@ const LandingPage = ({ onOpenInvitation }) => {
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="h-px w-16 bg-gradient-to-r from-fuchsia-300 to-rose-300"
+                className="h-px w-16 bg-gray-400"
               />
               <Heart className="w-5 h-5 text-rose-500" fill="currentColor" />
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="h-px w-16 bg-gradient-to-l from-fuchsia-300 to-rose-300"
+                className="h-px w-16 bg-gray-400"
               />
             </div>
 
@@ -189,9 +189,9 @@ const LandingPage = ({ onOpenInvitation }) => {
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="flex flex-col gap-4 mb-6 sm:mb-8 items-center"
               >
-                <div className="inline-flex flex-col items-center space-y-1 bg-white/90 px-6 py-3 rounded-2xl shadow-sm shadow-rose-100/60 hover:shadow-md transition-all duration-300 border border-rose-100">
-                  <Calendar className="w-6 h-6 text-rose-400" />
-                  <p className="text-rose-800 font-medium tracking-wide">
+                <div className="inline-flex flex-col items-center space-y-1 bg-white/90 px-6 py-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                  <Calendar className="w-6 h-6 text-gray-400" />
+                  <p className="text-gray-700 font-medium tracking-wide">
                     {formatEventDate(
                       config.data.date,
                       "full",
@@ -200,9 +200,9 @@ const LandingPage = ({ onOpenInvitation }) => {
                   </p>
                 </div>
 
-                <div className="inline-flex flex-col items-center space-y-1 bg-white/90 px-6 py-3 rounded-2xl shadow-sm shadow-fuchsia-100/60 hover:shadow-md transition-all duration-300 border border-fuchsia-100">
-                  <Clock className="w-6 h-6 text-fuchsia-400" />
-                  <p className="text-fuchsia-800 font-medium tracking-wide">
+                <div className="inline-flex flex-col items-center space-y-1 bg-white/90 px-6 py-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                  <Clock className="w-6 h-6 text-gray-400" />
+                  <p className="text-gray-700 font-medium tracking-wide">
                     {config.data.time}
                   </p>
                 </div>
@@ -217,21 +217,21 @@ const LandingPage = ({ onOpenInvitation }) => {
               >
                 <div className="space-y-3">
                   <div className="flex flex-col items-center gap-1">
-                    <h1 className="text-5xl sm:text-6xl font-custom text-rose-950 leading-tight tracking-wide">
+                    <h1 className="text-5xl sm:text-6xl font-custom text-gray-900 leading-tight tracking-wide">
                       {config.data.groomName}
                     </h1>
                     <motion.span
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="block text-rose-500 text-3xl leading-none"
+                      className="block text-gray-600 text-3xl leading-none"
                     >
                       ♥
                     </motion.span>
-                    <h1 className="text-5xl sm:text-6xl font-custom text-fuchsia-950 leading-tight tracking-wide">
+                    <h1 className="text-5xl sm:text-6xl font-custom text-gray-900 leading-tight tracking-wide">
                       {config.data.brideName}
                     </h1>
                   </div>
-                  <div className="h-0.5 w-24 mx-auto bg-gradient-to-r from-fuchsia-300 to-rose-300" />
+                  <div className="h-0.5 w-24 mx-auto bg-gray-400" />
                 </div>
               </motion.div>
 

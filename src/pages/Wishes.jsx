@@ -123,13 +123,10 @@ export default function Wishes() {
   };
 
   return (
-    <section
-      id="wishes"
-      className="min-h-screen py-20 px-4 bg-gradient-to-b from-rose-50 via-fuchsia-50 to-white"
-    >
+    <section id="wishes" className="min-h-screen py-20 px-4 bg-gray-100">
       <div className="max-w-3xl mx-auto">
         {error && (
-          <div className="mb-4 p-4 bg-rose-50 text-rose-700 rounded-lg border border-rose-100">
+          <div className="mb-4 p-4 bg-gray-100 text-gray-700 rounded-lg">
             {error}
           </div>
         )}
@@ -153,15 +150,15 @@ export default function Wishes() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
-                className="bg-white rounded-xl shadow-sm shadow-rose-100/60 border border-rose-100 p-6"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 p-6"
               >
-                <div className="font-medium text-rose-950 mb-2">
+                <div className="font-medium text-gray-900 mb-2">
                   {comments[currentIndex].userName}
                 </div>
-                <div className="text-fuchsia-900 mb-3">
+                <div className="text-gray-700 mb-3">
                   {comments[currentIndex].comment}
                 </div>
-                <div className="text-sm text-rose-400">
+                <div className="text-sm text-gray-400">
                   {comments[currentIndex].timestamp
                     ? new Date(
                         comments[currentIndex].timestamp,
@@ -178,7 +175,7 @@ export default function Wishes() {
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
-              <span className="text-sm text-fuchsia-600">
+              <span className="text-sm text-gray-500">
                 {currentIndex + 1} / {comments.length}
               </span>
               <button
@@ -193,10 +190,10 @@ export default function Wishes() {
 
         <motion.form
           onSubmit={handleCombinedSubmit}
-          className="space-y-6 bg-white rounded-xl shadow-sm shadow-fuchsia-100/50 border border-rose-100 p-6"
+          className="space-y-6 bg-white rounded-xl shadow-sm border border-gray-100 p-6"
         >
           <div className="space-y-1">
-            <label className="text-sm text-rose-900">
+            <label className="text-sm text-gray-800">
               {config.data.texts.nameLabel}
             </label>
             <input
@@ -204,20 +201,20 @@ export default function Wishes() {
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               placeholder={config.data.texts.namePlaceholder}
-              className="w-full px-4 py-3 rounded-lg bg-rose-50/60 border border-rose-100 focus:border-fuchsia-300 focus:outline-none"
+              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-gray-300 focus:outline-none"
               required
             />
           </div>
 
           <div className="space-y-1">
-            <label className="text-sm text-rose-900">
+            <label className="text-sm text-gray-800">
               {config.data.texts.wishLabel}
             </label>
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               placeholder={config.data.texts.wishPlaceholder}
-              className="w-full px-4 py-3 rounded-lg bg-rose-50/60 border border-rose-100 h-28 focus:border-fuchsia-300 focus:outline-none"
+              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 h-28 focus:border-gray-300 focus:outline-none"
             />
           </div>
 
